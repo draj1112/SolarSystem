@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -15,7 +16,7 @@ import sidespell.tech.solarsystem.R;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    private ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,13 +26,15 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        img = (ImageView) findViewById(R.id.imageView);
+
         final Spinner spinner = (Spinner) findViewById(R.id.testSpinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, Planets);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        FragmentActivity fragment;
+
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             @Override
@@ -39,21 +42,21 @@ public class MainActivity extends AppCompatActivity {
                                        int pos, long arg3) {
 
                 if (pos == 1) {
-                    fragment; = new FragmentActivity();
+                    img.setImageResource(R.drawable.mercury);
                 } else if (pos == 2) {
-                    fragment; = new FragmentActivity();
+                    img.setImageResource(R.drawable.venus);
                 } else if (pos == 3) {
-                    fragment; = new FragmentActivity();
+                    img.setImageResource(R.drawable.earth);
                 } else if (pos == 4) {
-                    fragment; = new FragmentActivity();
+                    img.setImageResource(R.drawable.mars);
                 } else if (pos == 5) {
-                    fragment; = new FragmentActivity();
+                    img.setImageResource(R.drawable.jupiter);
                 } else if (pos == 6) {
-                    fragment; = new FragmentActivity();
+                    img.setImageResource(R.drawable.saturn);
                 } else if (pos == 7) {
-                    fragment; = new FragmentActivity();
+                    img.setImageResource(R.drawable.uranus);
                 } else if (pos == 8) {
-                    fragment; = new FragmentActivity();
+                    img.setImageResource(R.drawable.neptune);
                 }
 
             }
